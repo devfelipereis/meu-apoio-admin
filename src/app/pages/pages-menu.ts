@@ -12,6 +12,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
+    title: 'Users',
+    icon: 'person-outline',
+    children: [
+      {
+        title: 'Register',
+        icon: 'person-add-outline',
+        link: '/users/register',
+      },
+      {
+        title: 'List',
+        icon: 'people-outline',
+        link: '/users/list',
+      }
+    ],
+  },
+  {
     title: 'Auth',
     icon: 'lock-outline',
     children: [
