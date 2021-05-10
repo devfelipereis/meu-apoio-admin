@@ -11,8 +11,10 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - '4200:4200'
+    networks:
+      - dev
 
 networks:
-  default:
+  dev:
     external:
-      name: meu-apoio-api_default
+      name: dev

@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 import { UsersComponent } from './users.component';
-import { NbButtonModule, NbCardModule, NbLayoutModule, NbMenuModule, NbSidebarModule } from '@nebular/theme';
 import { ThemeModule } from 'app/@theme/theme.module';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { DashboardModule } from '../dashboard/dashboard.module';
+import { UserCreateComponent } from './_components/user-create/user-create.component';
 
 
 
 @NgModule({
   declarations: [
-    UsersComponent
+    UsersComponent,
+    UserCreateComponent
   ],
   imports: [
-    NbCardModule,
-    ThemeModule,
+    MatTableModule,
+    // NbCardModule,
+    // ThemeModule,
   ]
 })
 export class UsersModule { }

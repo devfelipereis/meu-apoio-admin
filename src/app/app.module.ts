@@ -20,6 +20,11 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { AuthGuard } from './_guards/auth.guard';
+import { WebsocketService } from './_services/websocket.service';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: { transports: ['websocket']} };
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,8 +44,13 @@ import {
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    SocketIoModule.forRoot(config),
   ],
   bootstrap: [AppComponent],
+  providers:[
+    AuthGuard,
+    WebsocketService
+  ]
 })
 export class AppModule {
 }
