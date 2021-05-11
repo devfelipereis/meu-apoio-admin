@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersComponent } from './users/users.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [{
   path: '',
@@ -11,6 +13,14 @@ const routes: Routes = [{
     {
       path: 'dashboard',
       component: DashboardComponent,
+    },
+    {
+      path: 'chat',
+      component: ChatComponent,
+    },
+    {
+      path: '/users/register',
+      component: UsersComponent,
     },
     {
       path: '',

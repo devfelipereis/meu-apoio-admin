@@ -8,8 +8,29 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Chat',
+    icon: 'message-circle-outline',
+    link: '/pages/chat',
+  },
+  {
     title: 'FEATURES',
     group: true,
+  },
+  {
+    title: 'Users',
+    icon: 'person-outline',
+    children: [
+      {
+        title: 'Register',
+        icon: 'person-add-outline',
+        link: '/users/register',
+      },
+      {
+        title: 'List',
+        icon: 'people-outline',
+        link: '/users/list',
+      }
+    ],
   },
   {
     title: 'Auth',

@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  meu-apio-admin:
+    container_name: meu-apoio-admin
+    build:
+      context: ./.docker
+    volumes:
+      - .:/app
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - '4200:4200'
+    networks:
+      - dev
+
+networks:
+  dev:
+    external:
+      name: dev
