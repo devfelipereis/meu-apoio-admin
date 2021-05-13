@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from 'app/_services/websocket.service';
+import { v4 as uuidv4 } from 'uuid';
 // import { Socket } from 'ngx-socket-io';
 
 @Component({
@@ -9,7 +10,7 @@ import { WebsocketService } from 'app/_services/websocket.service';
 })
 export class ChatComponent implements OnInit {
 
-  messages = [
+  messages:Message[] = [
   ];
 
   constructor(
@@ -18,7 +19,7 @@ export class ChatComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.websocketService.listen('chat_message').subscribe((data) => {
+    this.websocketService.listen('chat_message').subscribe((data:Message) => {
       console.log('chat_message', data);
       this.handleUserMessage(data);
     })
@@ -32,11 +33,13 @@ export class ChatComponent implements OnInit {
 
     console.log(this.messages, event)
 
-    const message = {
+    const message: Message = {
+      id: uuidv4(),
       text: event.message,
       date: new Date(),
       reply: true,
       user: {
+        id: '2',
         name: 'Gezzy',
         avatar: 'https://techcrunch.com/wp-content/uploads/2015/08/safe_image.gif',
       },
@@ -45,8 +48,22 @@ export class ChatComponent implements OnInit {
     this.websocketService.emit('chat_message', message)
   }
 
-  handleUserMessage(message) {
+  handleUserMessage(message:Message) {
     this.messages.push(message);
   }
 
+}
+
+ interface Message {
+  id:    string;
+  text:  string;
+  date:  Date;
+  reply: boolean;
+  user:  User;
+}
+
+ interface User {
+  id:     string;
+  name:   string;
+  avatar: string;
 }
