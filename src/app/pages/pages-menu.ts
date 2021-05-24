@@ -4,13 +4,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Dashboard',
     icon: 'home-outline',
-    link: '/pages/dashboard',
+    link: '/dashboard',
     home: true,
   },
   {
     title: 'Chat',
     icon: 'message-circle-outline',
-    link: '/pages/chat',
+    link: '/chat',
+  },
+  {
+    title: 'Usuários',
+    icon: 'person-outline',
+    link: '/users'
   },
   {
     title: 'FEATURES',
