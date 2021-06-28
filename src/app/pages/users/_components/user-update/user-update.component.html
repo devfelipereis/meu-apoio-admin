@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Adicionar usuário</h2>
+<h2 mat-dialog-title>Editar usuário</h2>
 <form [formGroup]="form" (submit)="submit()">
 
 	<mat-dialog-content class="mat-typography">
@@ -25,30 +25,6 @@
 				<mat-form-field appearance="standard">
 					<mat-label>Email</mat-label>
 					<input matInput formControlName="email" placeholder="email@example.com" required
-						theme="dp-material" />
-				</mat-form-field>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-6">
-				<mat-form-field appearance="fill">
-					<mat-label>Senha</mat-label>
-					<input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required
-						theme="dp-material" />
-					<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-						[attr.aria-pressed]="hide">
-						<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-					</button>
-				</mat-form-field>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-6">
-				<mat-form-field appearance="fill">
-					<mat-label>Confirmar senha</mat-label>
-					<input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'" required
 						theme="dp-material" />
 				</mat-form-field>
 			</div>

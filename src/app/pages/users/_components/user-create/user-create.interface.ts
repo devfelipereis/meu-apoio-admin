@@ -1,9 +1,8 @@
-export interface User {
-  id: number;
+export interface UserCreate {
   firstName: string;
   lastName: string;
   email: string;
-  enabled: boolean;
   password: string;
   confirmPassword: string;
 }
+  

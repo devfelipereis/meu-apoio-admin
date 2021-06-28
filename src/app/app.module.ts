@@ -23,6 +23,8 @@ import {
 import { AuthGuard } from './_guards/auth.guard';
 import { WebsocketService } from './_services/websocket.service';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ConfirmDialogService } from './_services';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: { transports: ['websocket']} };
 
@@ -45,11 +47,12 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: { transp
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
     SocketIoModule.forRoot(config),
+    MatDialogModule,
   ],
   bootstrap: [AppComponent],
   providers:[
     AuthGuard,
-    WebsocketService
+    WebsocketService,
   ]
 })
 export class AppModule {
