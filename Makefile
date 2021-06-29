@@ -8,7 +8,7 @@ build:
 	docker-compose build
 
 up:
-	docker-compose up
+	env UID=$$(id -u) GID=$$(id -g) docker-compose up --build
 
 down:
 	docker-compose down

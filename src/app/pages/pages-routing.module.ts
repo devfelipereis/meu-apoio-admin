@@ -19,7 +19,7 @@ const routes: Routes = [{
       component: ChatComponent,
     },
     {
-      path: '/users/register',
+      path: 'users',
       component: UsersComponent,
     },
     {

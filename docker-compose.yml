@@ -1,10 +1,13 @@
-version: '3'
+version: '3.8'
 
 services:
   meu-apio-admin:
     container_name: meu-apoio-admin
     build:
       context: ./.docker
+      args:
+        - UID=${UID}
+        - GID=${GID}
     volumes:
       - .:/app
       - /etc/timezone:/etc/timezone:ro
